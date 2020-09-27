@@ -71,3 +71,52 @@ A-B : 일반적인 이름 */
 .input--text::-webkit-input-placeholder{color: #cacaca;}
 .input--text::-ms-input-placeholder{color: #cacaca;}
 .input--text::-moz-input-placeholder{color: #cacaca;}
+
+
+/* HEADER */
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, .75);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+  background: #fff;
+}
+/* height의 기본값 : auto. 자식 요소의 값에 영향을 받음 e.g. inner높이가 78이면 header도 자동으로 78. */
+
+header .inner {
+  max-width: 980px;
+  height: 78px;
+  margin: 0 auto;  /* 기본적인 가로 사이즈가 정의 돼야!! 화면 가운데 정렬 */
+
+}
+
+header .menu-group {
+  display: flex;/* logo & main-menu 수평정렬 */
+  align-items: center;  /* if display:flex, child들을 (parents's height에) 수직 가운데 정렬 */
+  height: 100%;  /* parent( .inner )의 영향, .inner's height 같아짐 */
+}
+
+header .logo{
+margin-right: 10px;
+}
+
+header .logo a{
+  /* a태그의 백그라운드에 img 삽임 */
+  background: url("../img/logo.svg");
+  width: 32px;
+  height: 32px;
+  display: block;
+  text-indent: -9999px;  /* img 대체텍스트 기법 */
+}
+
+header .logo a:hover{
+  background: url("../img/logo_on.svg");
+}
+header .main-menu{
+  display: flex;  /* main-menu의 child가 수평정렬 */
+}
+/* 실제 클릭 되는 부분 : (li 태그 안에) a 태그(inline요소라 크기 지정x, display block 변경 필요) */
+header .main-menu li a{
+  display: block;
+  padding: 10px;
+  color: #3c4146;
+
+}
