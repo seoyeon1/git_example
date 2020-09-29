@@ -11,6 +11,11 @@ A-B : 일반적인 이름 */
     color: #333;
 }
 
+a{
+  text-decoration: none;
+}
+
+
 /* 전역 스타일 정의-버튼 */
 
 .btn {
@@ -28,6 +33,7 @@ A-B : 일반적인 이름 */
     cursor:pointer;
     box-sizing:border-box;
     position: relative;
+    color: #333;
   }
 
   .btn:hover::before{
@@ -120,3 +126,18 @@ header .main-menu li a{
   color: #3c4146;
 
 }
+
+header .main-menu li a:hover{
+  color: #4078c0;
+}
+
+
+/* Right MENU  */
+
+/* sub menu */
+
+
+
+/* search btn */
+
+/* btns */
