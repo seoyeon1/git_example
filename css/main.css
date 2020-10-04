@@ -16,7 +16,7 @@ a{
 }
 
 
-/* 전역 스타일 정의-버튼 */
+/* 전역(COMMON) 스타일 정의-버튼 */
 
 .btn {
     height:34px;
@@ -93,6 +93,39 @@ a{
   float: right;
 }
 
+/* SUMMARY */
+.summary{
+
+}
+
+.summary__title{
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.summary__description{
+  font-size: 26px;
+  font-weight: 300;
+  color: #767676;
+  line-height: 1.5;
+}
+
+/* SECTION & INNER */
+.section{
+  position: relative;/* 위치의 기준을 자기 자신으로 설정. 레이아웃엔 영향x */
+/* inner밖에서도 요소를 만들 수 있으므로 여기에도 추가 */
+}
+
+.section .inner {
+  max-width: 980px;
+  margin: 0 auto;/* 기본적인 가로 사이즈가 정의 돼야!! 화면 가운데 정렬 */
+  box-sizing: border-box;/* padding/border가 들어가서 여백이 생겼을 때 요소가 무분별하게 커지는 걸 방지 */
+  position: relative;/* inner 속 특정 요소가 position: absolute;일 때 부모요소에 position이 있는지 확인하고 없으면 부모에 relative지정해줘야 함. 요소가 무분별하게 이동하는 걸 1차적으로 막기 위해 사용 */
+}
+
+
 
 /* HEADER */
 header {
@@ -103,9 +136,7 @@ header {
 /* height의 기본값 : auto. 자식 요소의 값에 영향을 받음 e.g. inner높이가 78이면 header도 자동으로 78. */
 
 header .inner {
-  max-width: 980px;
   height: 78px;
-  margin: 0 auto;  /* 기본적인 가로 사이즈가 정의 돼야!! 화면 가운데 정렬 */
 
 }
 
@@ -150,7 +181,6 @@ header .main-menu li a:hover{
 /* Right MENU  */
 
 /* sub menu */
-
 header .sign-group {
   display: flex;
   align-items: center;
@@ -202,4 +232,45 @@ header .sub-menu li a {
 
 header .sub-menu li a:hover{
   color: #4078c0;
+}
+
+
+/* VISUAL */
+.section--visual{
+  background-image: url("../img/bg.jpg");
+  /* 이미지 넣고 배경 가로 부분이 비어서 100%로 수정함 */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom left;/* 배경 위치 : 왼쪽하단 */
+
+}
+
+.section--visual::before{
+  content: "";
+  /* width: 100%; & height: 100%;와 동일한 효과 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .3);
+}
+
+.section--visual .inner{
+
+  padding: 160px 0;
+}
+
+.section--visual .summary__title{
+  color: #fff;
+  font-size: 54px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+                0 1px 25px rgba(0, 0, 0, .75);
+}
+
+.section--visual .summary__description {
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+                0 1px 25px rgba(0, 0, 0, .75);
+  
 }
